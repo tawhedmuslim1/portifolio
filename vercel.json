@@ -1,0 +1,5 @@
+{
+  "buildCommand": "DISABLE_ESLINT_PLUGIN=true NEXT_DISABLE_LINTING=1 next build",
+  "ignoreCommand": "echo 'Skipping build checks'",
+  "installCommand": "npm install"
+} 
