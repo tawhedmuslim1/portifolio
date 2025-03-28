@@ -8,6 +8,7 @@ export async function GET() {
     const projectsData = await fetchProjects();
     
     // Process the data before sending to client
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const projects = projectsData.results.map((page: any) => {
       const props = page.properties || {};
       
@@ -15,6 +16,7 @@ export async function GET() {
       const title = props.Name?.title?.[0]?.plain_text || "Untitled Project";
       const description = props.Description?.rich_text?.[0]?.plain_text || "";
       const tags = Array.isArray(props.Tags?.multi_select) 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ? props.Tags.multi_select.map((tag: any) => tag.name) 
         : [];
       const imageFiles = props.Image?.files || [];

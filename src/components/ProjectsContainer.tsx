@@ -1,6 +1,5 @@
 import { fetchFeaturedProjects, extractNotionProperties } from "@/lib/notion";
 import ProjectsList from "./ProjectsList";
-import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 // This is a server component that fetches data
 export default async function ProjectsContainer() {
