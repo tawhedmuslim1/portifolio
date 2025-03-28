@@ -14,6 +14,7 @@ export const notion = new Client({
 });
 
 // Helper function to extract property values from Notion pages
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function extractNotionProperties(page: any) {
     const props = page.properties || {};
     
@@ -34,6 +35,7 @@ export function extractNotionProperties(page: any) {
     // Extract other common properties
     const description = props.Description?.rich_text?.[0]?.plain_text || "";
     const tags = Array.isArray(props.Tags?.multi_select) 
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ? props.Tags.multi_select.map((tag: any) => tag.name) 
         : [];
     const imageFiles = props.Image?.files || [];

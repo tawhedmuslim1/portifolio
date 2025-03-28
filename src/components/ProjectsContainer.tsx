@@ -1,6 +1,6 @@
-import { fetchProjects, fetchFeaturedProjects, extractNotionProperties } from "@/lib/notion";
+import { fetchFeaturedProjects, extractNotionProperties } from "@/lib/notion";
 import ProjectsList from "./ProjectsList";
-import { Project } from "@/types";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 // This is a server component that fetches data
 export default async function ProjectsContainer() {
@@ -16,6 +16,7 @@ export default async function ProjectsContainer() {
   }
   
   // Process the data before passing to client component
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const projects = projectsData.results.map((page: any) => extractNotionProperties(page));
   
   // Pass processed data to client component

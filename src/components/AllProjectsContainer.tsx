@@ -3,7 +3,7 @@ import { Project } from "@/types";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CodeIcon, ArrowRightIcon } from "lucide-react";
+import { ArrowRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,6 +20,7 @@ export default async function AllProjectsContainer() {
   }
   
   // Process the data
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const projects = projectsData.results.map((page: any) => extractNotionProperties(page));
   
   return (

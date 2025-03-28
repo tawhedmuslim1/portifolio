@@ -1,13 +1,11 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-interface TimelineProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function Timeline({
   className,
   children,
   ...props
-}: TimelineProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn("space-y-6", className)}
@@ -18,13 +16,11 @@ export function Timeline({
   )
 }
 
-interface TimelineItemProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function TimelineItem({
   className,
   children,
   ...props
-}: TimelineItemProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn("relative pb-6 last:pb-0", className)}
@@ -35,12 +31,10 @@ export function TimelineItem({
   )
 }
 
-interface TimelineConnectorProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function TimelineConnector({
   className,
   ...props
-}: TimelineConnectorProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn("absolute left-0 top-6 bottom-0 w-px bg-border", className)}
@@ -49,13 +43,11 @@ export function TimelineConnector({
   )
 }
 
-interface TimelineHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function TimelineHeader({
   className,
   children,
   ...props
-}: TimelineHeaderProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn("flex items-baseline gap-2 mb-2", className)}
@@ -67,13 +59,11 @@ export function TimelineHeader({
   )
 }
 
-interface TimelineTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {}
-
 export function TimelineTitle({
   className,
   children,
   ...props
-}: TimelineTitleProps) {
+}: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
     <h3
       className={cn("font-semibold leading-none", className)}
@@ -84,13 +74,11 @@ export function TimelineTitle({
   )
 }
 
-interface TimelineDescriptionProps extends React.HTMLAttributes<HTMLParagraphElement> {}
-
 export function TimelineDescription({
   className,
   children,
   ...props
-}: TimelineDescriptionProps) {
+}: React.HTMLAttributes<HTMLParagraphElement>) {
   return (
     <p
       className={cn("text-sm text-muted-foreground", className)}
@@ -101,13 +89,11 @@ export function TimelineDescription({
   )
 }
 
-interface TimelineContentProps extends React.HTMLAttributes<HTMLDivElement> {}
-
 export function TimelineContent({
   className,
   children,
   ...props
-}: TimelineContentProps) {
+}: React.HTMLAttributes<HTMLDivElement>) {
   return (
     <div
       className={cn("pl-6 ml-1 border-l border-border", className)}
