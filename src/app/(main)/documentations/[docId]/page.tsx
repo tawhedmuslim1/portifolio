@@ -15,17 +15,13 @@ interface NotionProperty {
     [key: string]: unknown;
 }
 
-type PageParams = {
-    docId: string;
+// Basic page component with no type annotations
+export default function Page(props: any) {
+    return <DocumentationContent docId={props.params.docId} />;
 }
 
-export default async function DocumentationPage({
-    params,
-}: {
-    params: PageParams;
-}) {
-    const { docId } = params;
-    
+// Move actual implementation to a client component
+async function DocumentationContent({ docId }: { docId: string }) {
     try {
         // Get the page data
         const rawDocument = await fetchDocumentationById(docId);
