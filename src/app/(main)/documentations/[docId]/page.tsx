@@ -5,14 +5,6 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { format } from "date-fns";
 import Link from "next/link";
 import { Fragment } from "react";
-import { Metadata } from "next";
-
-type Props = {
-    params: {
-        docId: string;
-    };
-    searchParams: { [key: string]: string | string[] | undefined };
-}
 
 // Define a type for Notion property objects
 interface NotionProperty {
@@ -23,7 +15,15 @@ interface NotionProperty {
     [key: string]: unknown;
 }
 
-export default async function DocumentationPage({ params }: Props) {
+type PageParams = {
+    docId: string;
+}
+
+export default async function DocumentationPage({
+    params,
+}: {
+    params: PageParams;
+}) {
     const { docId } = params;
     
     try {
