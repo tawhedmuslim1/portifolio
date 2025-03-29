@@ -5,11 +5,13 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { format } from "date-fns";
 import Link from "next/link";
 import { Fragment } from "react";
+import { Metadata } from "next";
 
-interface Props {
+type Props = {
     params: {
         docId: string;
     };
+    searchParams: { [key: string]: string | string[] | undefined };
 }
 
 // Define a type for Notion property objects
